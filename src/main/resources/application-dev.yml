@@ -1,0 +1,13 @@
+server:
+  port: 6065
+  servlet:
+    context-path: /ssocenter
+    session:
+      timeout: "PT30M"
+
+swagger:
+  enabled: true
+
+
+
+

@@ -1,0 +1,22 @@
+server:
+  port: 6061
+  servlet:
+    context-path: /demoa
+    session:
+      timeout: "PT30M"
+
+swagger:
+  enabled: true
+
+hostAddress:
+  ip: http://localhost:6061/demoa
+  exitUrl: /user/logout
+
+sso:
+  path: http://localhost:6065/demosso
+  login: /index.html
+  isLogin: /sso/login
+  tokenCheck: /sso/tokenCheck
+  exit: /sso/exit
+  sysName: demoa
+

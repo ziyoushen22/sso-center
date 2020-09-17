@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>sso中心</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        .style1 {
+            width: 100%;
+        }
+        .style2 {
+            width: 429px;
+        }
+    </style>
+</head>
+<body>
+<h2>hello world sso</h2>
+<div>111111</div>
+
+<div>
+    <form method="post" id="form1" action="./sso/login">
+        <table class="style1">
+            <input type="hidden" id="request_url" name="request_url"/>
+            <tr>
+                <td class="style2">
+                    用户名：
+                </td>
+                <td>
+                    <input type="text" name="username" value="茆永强"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    密码：
+                </td>
+                <td>
+                    <input type="password" id="password" name="password" value="1"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    <input type="submit" name="submit" value="Go"/>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script language="JavaScript" type="text/javascript">
+    $.ajax({
+        type: "POST",
+        url: "./sso/getRequestUrl",
+        success: function (data) {
+            $("#request_url").val(data);
+        },
+        error: function () {
+            alert("加载失败");
+        }
+    });
+</script>
+</body>
+</html>
